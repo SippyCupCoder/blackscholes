@@ -28,8 +28,20 @@ blackScholes.r = st.number_input(
     "Interest rate", min_value=0.0, value=0.01, placeholder="Type a number..."
 )
 
-st.write(blackScholes.calculateCallPrice())
-st.write(blackScholes.calculatePutPrice())
+callPrice =blackScholes.calculateCallPrice()
+putPrice = blackScholes.calculatePutPrice()
+
+st.markdown(f"""
+    <div class="metric-label">CALL Value</div>
+    <div class="metric-value">${callPrice:.2f}</div>
+    """, unsafe_allow_html=True)
+
+st.markdown(f"""
+    <div class="metric-label">PUT Value</div>
+    <div class="metric-value">${putPrice:.2f}</div>
+    """, unsafe_allow_html=True)
+
+
 
 minStrikePrice = st.number_input(
     "Min Strike Price", min_value=0.0, value=50.0, placeholder="Type a number..."
