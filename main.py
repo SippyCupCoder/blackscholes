@@ -8,11 +8,11 @@ from blackScholes import BlackScholes
 blackScholes = BlackScholes()
 
 blackScholes.s = st.number_input(
-    "Stock price", min_value=0, value=100, placeholder="Type a number..."
+    "Stock price", min_value=0.01, value=100.0, placeholder="Type a number..."
 )
 
 blackScholes.k = st.number_input(
-    "Strike price", min_value=0, value=100, placeholder="Type a number..."
+    "Strike price", min_value=0.01, value=100.0, placeholder="Type a number..."
 )
 
 blackScholes.t = st.number_input(
@@ -20,12 +20,12 @@ blackScholes.t = st.number_input(
 )
 
 blackScholes.v = st.number_input(
-    "Volatility", min_value=0.0, max_value=1.0, value=0.01, placeholder="Type a number..."
+    "Volatility", min_value=0.0, value=0.01, placeholder="Type a number..."
 )
 
 
 blackScholes.r = st.number_input(
-    "Interest rate", min_value=0.0, value=0.01, placeholder="Type a number..."
+    "Interest rate", value=0.01, placeholder="Type a number..."
 )
 
 callPrice =blackScholes.calculateCallPrice()
